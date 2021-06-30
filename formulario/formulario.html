@@ -5,35 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fomulario</title>
+    <link rel="stylesheet" href="fomulario01-style.css">
 </head>
 <body>
 
-    <form action="">
-        <div>
-            <h1>Formulário de Clientes</h1>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend>Formulário de Clientes</legend>
+        
+                <div class="inputbox">
+                    <input type="text" name="Nome" id="Nome" class="inputuser" >
+                    <label for="Nome">Nome Completo</label>
+                </div>
+                <div class="inputbox">
+                    <input type="email" name="Email" id="Email" class="inputuser">
+                    <label for="Email">Email</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="Telefone" id="Telefone" class="inputuser">
+                    <label for="Telefone">Telefone</label>
+                </div>
+                
+                <div>
+                    <p>Sexo:</p>
+                    <div>
+                        <input type="radio" name="genero" id="Feminino" value="Feminino" >
+                        <label for="Feminino">Feminino</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" id="Masculino" value="Masculino">
+                        <label for="Masculino">Masculino</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" id="Outros" value="Outros">
+                        <label for="Outros">Outros</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="Data de Nascimento">Data de Nascimento:</label>
+                    <input type="date" name="" id="Data de Nascimento" class="inputuser">
+                </div>
 
-            <input type="text" name="" id="" placeholder="Nome Completo">
-
-            <input type="email" name="" id="" placeholder="Email">
-
-            <input type="text" name="" id="" placeholder="Telefone">
-
-            <p>Sexo:</p>
-            <input type="radio" name="" id=""><label for="">Feminino</label>
-            <input type="radio" name="" id=""><label for="">Masculino</label>
-            <input type="radio" name="" id=""><label for="">Outros</label> <br>
-
-            <label>Data de Nascimento:</label>
-            <input type="date" name="" id=""> <br>
-
-            <input type="text" name="" id="" placeholder="Cidade">
-
-            <input type="text" name="" id="" placeholder="Estado">
-
-            <input type="text" name="" id="" placeholder="Endereço">
-
-            <button>Enviar</button>
-        </div>
-    </form>
+                <div class="inputbox">
+                    <input type="text" name="Cidade" id="Cidade"  class="inputuser">
+                    <label for="Cidade">Cidade</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="Estado" id="Estado"  class="inputuser">
+                    <label for="Estado">Estado</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="Endereço" id="Endereço" class="inputuser">
+                    <label for="Endereço">Endereço</label>
+                </div>
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
