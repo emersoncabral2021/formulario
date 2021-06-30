@@ -13,18 +13,20 @@
         <form action="">
             <fieldset>
                 <legend>Formulário de Clientes</legend>
-        
+                <br>
                 <div class="inputbox">
-                    <input type="text" name="Nome" id="Nome" class="inputuser" >
-                    <label for="Nome">Nome Completo</label>
+                    <input type="text" name="Nome" id="Nome" class="inputuser" required>
+                    <label for="Nome" class="labelinput">Nome Completo</label>
                 </div>
+                <br><br>
                 <div class="inputbox">
-                    <input type="email" name="Email" id="Email" class="inputuser">
-                    <label for="Email">Email</label>
+                    <input type="text" name="Email" id="Email" class="inputuser" required>
+                    <label for="Email" class="labelinput">Email</label>
                 </div>
+                <br><br>
                 <div class="inputbox">
-                    <input type="text" name="Telefone" id="Telefone" class="inputuser">
-                    <label for="Telefone">Telefone</label>
+                    <input type="text" name="Telefone" id="Telefone" class="inputuser" required>
+                    <label for="Telefone" class="labelinput">Telefone</label>
                 </div>
                 
                 <div>
@@ -42,25 +44,28 @@
                         <label for="Outros">Outros</label>
                     </div>
                 </div>
-                
+                <br>
                 <div>
                     <label for="Data de Nascimento">Data de Nascimento:</label>
-                    <input type="date" name="" id="Data de Nascimento" class="inputuser">
+                    <input type="date" name="" id="Data_Nascimento" >
                 </div>
-
+                <br><br>
                 <div class="inputbox">
-                    <input type="text" name="Cidade" id="Cidade"  class="inputuser">
-                    <label for="Cidade">Cidade</label>
+                    <input type="text" name="Cidade" id="Cidade"  class="inputuser"required>
+                    <label for="Cidade" class="labelinput">Cidade</label>
                 </div>
+                <br><br>
                 <div class="inputbox">
-                    <input type="text" name="Estado" id="Estado"  class="inputuser">
-                    <label for="Estado">Estado</label>
+                    <input type="text" name="Estado" id="Estado"  class="inputuser" required>
+                    <label for="Estado" class="labelinput">Estado</label>
                 </div>
+                <br><br>
                 <div class="inputbox">
-                    <input type="text" name="Endereço" id="Endereço" class="inputuser">
-                    <label for="Endereço">Endereço</label>
+                    <input type="text" name="Endereço" id="Endereço" class="inputuser" required>
+                    <label for="Endereço" class="labelinput">Endereço</label>
                 </div>
-                <button type="submit">Enviar</button>
+                <br>
+                <button type="submit" id="submit">Enviar</button>
             </fieldset>
         </form>
     </div>
