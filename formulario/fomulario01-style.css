@@ -8,7 +8,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: rgba(0, 0, 0, 0.623);
-    padding: 15px;
+    padding: 13px;
     border-radius: 15px;    
     color: white;
 
@@ -48,7 +48,7 @@ legend{
 .inputuser:valid ~ .labelinput{
     top: -20px;
     font-size: 12px;
-    color: blue;
+    color: rgb(85, 85, 221);
 }
 #Data_Nascimento{
     border-radius: 10px;
