@@ -1,0 +1,96 @@
+/*geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+input, label{
+    width: 100%;
+    display: block;
+}
+input:focus, label:focus{
+    outline: none;
+}
+a{
+    color: rgb(255, 0, 149);
+}
+body{
+    padding-top:5vh /* 5% da tela*/ ;
+    background-color: rgb(27, 114, 214);
+    /*
+    background-image: url();
+    background-size: cover;
+
+    */
+}
+/*form*/
+#conteiner{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+
+}
+
+#conteiner h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem /*rem e relativo ao tamanho da fonte da tela*/;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.full-box{
+    flex: 1 1 100%;
+    position:relative;
+}
+.half-box{
+    flex: 1 1 45%;
+}
+.spancing{
+    margin-right: 2.5%;
+}
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+input{
+    border-bottom: 1px black solid;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 40px;
+}
+input:focus{
+    border-color: rgb(255, 0, 149);
+}
+
+ /*para seleciona o input pelo type*/
+input[type="submit"]{
+   background-color: rgb(255, 0, 149);
+   color: white;
+   border: none;
+   border-radius: 20px;
+   height: 40px;
+   cursor: pointer;
+   margin-top: 10px;
+}
+#agreement{
+    margin-right: 5px;
+}
+#agreement, #agreement-label{
+    display: inline-block;
+    width: auto;
+}.erro-validation{
+    color: red;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+}
+.template{
+    display: none;
+}
