@@ -2,11 +2,25 @@ class Validator {
 
     constructor(){
         this.validation = [
+            'data-required',
             'data-min-length', 
+            'data-max-length',
+            'data-email-validate',
+            'data-only-letters',
+            'data-equal',
+            
         ]
     }
+
     //iniciar a validação de todos os campos
     validate(form){
+
+        //resgata todas as validações
+        let currentvalition = document.querySelectorAll("form .erro-validation")
+
+        if(currentvalition.length > 0){
+            this.clearvalidation(currentvalition)
+        }
         //pegar todos os input
         let inputs = form.getElementsByTagName('input') 
 
@@ -41,15 +55,73 @@ class Validator {
     minlength(input,minvalue){
 
         let inputlength = input.value.length;
-        let erromenssae = `o campo precisa ter pelo menos ${minvalue}`;
+        let erromenssage = `o campo precisa ter pelo menos ${minvalue} caracteres`;
 
         if(inputlength < minvalue){
-            this.imprimirmessage(input,erromenssae)
+            this.imprimirmessage(input,erromenssage)
         }
+    }
+
+    //verificar se um input passou do limite de caracteres
+    maxlength(input,maxvalue){
+        let inputlength = input.value.length;
+        let erromenssage = `o campo precisa menos de que ${maxvalue} caracteres`;
+
+        if(inputlength > maxvalue){
+            this.imprimirmessage(input,erromenssage)
+        }
+    }
+
+    //validar email
+    emailvalidate(input){
+        let re = /\S+@\S+\.\S+/;
+
+        let email = input.value
+
+        let errormessage = `insira um email no padrão emerson@email.com`
+        //se não for o email
+        if(!re.test(email)){
+            this.imprimirmessage(input,errormessage)
+        }
+
+    }
+    //valida se o campo tem apenas letras
+    onlyletters(input){
+
+        let re = /^[A-Za-z]+$/;
+
+        let inputvalue = input.value
+
+        let errormessage = `Este campo não aceita núneros ne caracteres especiais`
+
+        if(!re.test(inputvalue)){
+            this.imprimirmessage(input,errormessage)
+        }
+
+
+    }
+    //verifca se os dois campos são iguais
+    equal(input, inputName){
+
+    let inputcompare = document.getElementsByTagName(inputName);
+
+    console.log(inputcompare)
+
+    let errormessage = `Este campo tem que tá igual ao ${inputName}`;
+
+    if(input.value != inputcompare.value){
+        this.imprimirmessage(input,errormessage)
+    }
+
     }
     // metodo para imprimir menssagen de erro na tela
     imprimirmessage(input,msg){
+        //quantidade de erros
+        let error = input.parentNode.querySelector('.erro-validation');
+
+        if(error === null){
         let template = document.querySelector('.erro-validation').cloneNode(true)
+       
 
         template.textContent = msg
 
@@ -57,7 +129,21 @@ class Validator {
 
         template.classList.remove('template')
 
-        inputparent.appendChild(template)
+        inputparent.appendChild(template)}
+    }
+    //verificar se input é requerido
+    required(input){
+        let inputvalue = input.value;
+
+        if(inputvalue === ''){
+            let errormessage = `Este campo é obrigatorio`
+
+            this.imprimirmessage(input,errormessage)
+        }
+    }
+    //limpa validação da tela
+    clearvalidation(validation){
+        validation.forEach(el => el.remove())
     }
 }
 
@@ -66,7 +152,6 @@ let form = document.getElementById("registre-form")
 let submit = document.getElementById("btn-submit")
 let validator = new Validator()
 
-console.log(form)
 //evento de validações
 
 submit.addEventListener('click',function(e){

@@ -9,6 +9,7 @@ input, label{
     width: 100%;
     display: block;
 }
+
 input:focus, label:focus{
     outline: none;
 }
@@ -37,7 +38,6 @@ body{
 
 #conteiner h1{
     text-align: center;
-    margin-bottom: 25px;
     font-size: 1.6rem /*rem e relativo ao tamanho da fonte da tela*/;
 }
 form{
@@ -51,6 +51,7 @@ form{
 }
 .half-box{
     flex: 1 1 45%;
+    position: relative;
 }
 .spancing{
     margin-right: 2.5%;
@@ -58,12 +59,13 @@ form{
 label{
     font-weight: bold;
     font-size: .8rem;
+    margin-top: 40px;
+
 }
 input{
     border-bottom: 1px black solid;
     padding: 10px;
     font-size: .9rem;
-    margin-bottom: 40px;
 }
 input:focus{
     border-color: rgb(255, 0, 149);
@@ -85,11 +87,11 @@ input[type="submit"]{
 #agreement, #agreement-label{
     display: inline-block;
     width: auto;
-}.erro-validation{
+}
+.erro-validation{
     color: red;
+    font-size: .9rem;
     position: absolute;
-    top: 57px;
-    font-size: .8rem;
 }
 .template{
     display: none;
