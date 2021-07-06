@@ -8,6 +8,7 @@ class Validator {
             'data-email-validate',
             'data-only-letters',
             'data-equal',
+            'data-password-validate',
             
         ]
     }
@@ -103,9 +104,9 @@ class Validator {
     //verifca se os dois campos são iguais
     equal(input, inputName){
 
-    let inputcompare = document.getElementsByTagName(inputName);
+    let inputcompare = document.getElementById("senha")
 
-    console.log(inputcompare)
+    console.log(inputcompare.value)
 
     let errormessage = `Este campo tem que tá igual ao ${inputName}`;
 
@@ -114,8 +115,43 @@ class Validator {
     }
 
     }
-    // metodo para imprimir menssagen de erro na tela
-    imprimirmessage(input,msg){
+    //valida campo de senha 
+    passwordvalidate(input){
+
+        //explodir string em um array  
+        let charAr = input.value.split("")
+
+        let uppercases = 0
+        let number = 0
+
+        for(let i = 0;charAr.length > i;i++){
+            if(charAr[i] === charAr[i].toUpperCase() && isNaN(parseInt(charAr[i]))){
+                uppercases++
+            }else if(!isNaN(parseInt(charAr[i]))){
+                number++
+
+            }
+        }
+        if(uppercases === 0 || number === 0){
+            let errormessage = `A senha precisa de um caractere maiusculo e um número`
+
+            this.imprimirmessage(input,errormessage)
+
+        }
+    }
+   
+    //verificar se input é requerido
+    required(input){
+        let inputvalue = input.value;
+
+        if(inputvalue === ''){
+            let errormessage = `Este campo é obrigatorio`
+
+            this.imprimirmessage(input,errormessage)
+        }
+    }
+     // metodo para imprimir menssagen de erro na tela
+     imprimirmessage(input,msg){
         //quantidade de erros
         let error = input.parentNode.querySelector('.erro-validation');
 
@@ -130,16 +166,6 @@ class Validator {
         template.classList.remove('template')
 
         inputparent.appendChild(template)}
-    }
-    //verificar se input é requerido
-    required(input){
-        let inputvalue = input.value;
-
-        if(inputvalue === ''){
-            let errormessage = `Este campo é obrigatorio`
-
-            this.imprimirmessage(input,errormessage)
-        }
     }
     //limpa validação da tela
     clearvalidation(validation){
