@@ -1,3 +1,4 @@
+//orietação a objeto(POO)
 class Validator {
 
     constructor(){
@@ -37,13 +38,14 @@ class Validator {
                 //verifica se a validação atual existeno input
                 if(input.getAttribute(this.validation[i]) != null){
 
-                    //data-min-length para -> minlength
+                    //data-min-length para -> minlength, limpando a string para vira metodo
                     let method = this.validation[i].replace('data-', '').replace('-', '')
 
                     //valor do input
                     let value = input.getAttribute(this.validation[i]);
+                    console.log(method)
 
-                    //invocar metodo
+                    //invocar metodo 
                     this[method](input,value);
 
 
@@ -75,6 +77,7 @@ class Validator {
 
     //validar email
     emailvalidate(input){
+        //string + @ + string e ponto e + uma string
         let re = /\S+@\S+\.\S+/;
 
         let email = input.value
@@ -106,7 +109,6 @@ class Validator {
 
     let inputcompare = document.getElementById("senha")
 
-    console.log(inputcompare.value)
 
     let errormessage = `Este campo tem que tá igual ao ${inputName}`;
 
@@ -165,8 +167,9 @@ class Validator {
 
         template.classList.remove('template')
 
-        inputparent.appendChild(template)}
+        inputparent.appendChild(template)
     }
+        }
     //limpa validação da tela
     clearvalidation(validation){
         validation.forEach(el => el.remove())
